@@ -10,4 +10,4 @@ The multispan is actually composed of 3 spans, each with a length of 80km (240km
 Those amplifiers are controlled by the SPO devices: more specifically, the first and second amplifier (Ampli1 and Ampli2) are controlled by the SPO1, while the other two (Ampli3 and Ampli4) by the SPO2. 
 Each amplifier has been configured in constant gain mode, that allows to enter each span with 0dBm of optical power.
 The reverse link, from SPO2 to SPO1 is in back-to-back configuration, presenting a 10dB attenuator.
-![Testbed](testbed.png)
+![Testbed](testbed.jpg)
