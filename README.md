@@ -11,3 +11,39 @@ Those amplifiers are controlled by the SPO devices: more specifically, the first
 Each amplifier has been configured in constant gain mode, that allows to enter each span with 0dBm of optical power.
 The reverse link, from SPO2 to SPO1 is in back-to-back configuration, presenting a 10dB attenuator.
 ![Testbed](testbed.jpg)
+
+## Dataset details
+The dataset is composed of more than 10.000 samples, which are gathered from both the SPO devices and the amplifiers, every 3,5 seconds.
+
+For each SPO, the following metrics are retrieved:
+- Optical Signal to Noise Ratio (OSNR)
+- Bit Error Rate (BER)
+
+For each amplifier instead, we retrieved:
+- Input Power 
+- Ouput Power
+
+For this reason, the csv has been structrured with the following fields:
+- **Timestamp**: Unix format.
+- **Type**: which has two possible values according to which device the metric is referring to:
+  - *Infrastructure*, for the amplifiers.
+  - *Devices*, for the SPO devices.
+- **ID**: which refers to the id used in the testbed picture:
+  - *SPO1*;
+  - *SPO2*;
+  - *Ampli1*;
+  - *Ampli2*;
+  - *Ampli3*;
+  - *Ampli4*.
+- **BER**: only for the SPOs related entries.
+- **OSNR**: only for the SPOs related entries.
+- **InputPower**: only for the amplifiers related entries.
+- **OutputPower**: only for the amplifiers related entries.
+
+This 10 hours dataset is divided in two half:
+- 5 hours in normal network condition;
+- 5 hours with periodic failures.
+
+More precisely, in the second half we used the WSS to dastrically increase the attenuation every 4 minutes, and so putting the network in a failure condition for 1 minute. After that, the WSS is reconfigured so that the network starts working properly again.
+
+The entry with timestamp *1624471835* represents the starting point of the second half. 
