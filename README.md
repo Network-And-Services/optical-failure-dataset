@@ -39,11 +39,14 @@ For this reason, the csv has been structrured with the following fields:
 - **OSNR**: only for the SPOs related entries.
 - **InputPower**: only for the amplifiers related entries.
 - **OutputPower**: only for the amplifiers related entries.
+- **Failure**: field showing entries acquired while simulating the failure.
 
-This 10 hours dataset is divided in two half:
+This 10 hours dataset is divided in two halves:
 - 5 hours in normal network condition;
 - 5 hours with periodic failures.
 
-More precisely, in the second half we used the WSS to dastrically increase the attenuation every 4 minutes, and so putting the network in a failure condition for 1 minute. After that, the WSS is reconfigured so that the network starts working properly again.
+The entry with timestamp *1624471835* delimits the two parts. 
 
-The entry with timestamp *1624471835* represents the starting point of the second half. 
+More precisely, for the second half we used the WSS to dastrically increase the attenuation every 4 minutes, and so putting the network in a failure condition for 1 minute. After that, the WSS is reconfigured so that the network starts working properly again. 
+
+The *Failure* field is used as an indicator that shows all the entries that are gathered while the input power of the Ampli1 is too low due to the WSS configuation. 
