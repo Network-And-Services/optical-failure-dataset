@@ -47,6 +47,7 @@ This 10 hours dataset is divided in two halves:
 
 The entry with timestamp *1624471835* delimits the two parts. 
 
-More precisely, for the second half we used the WSS to dastrically increase the attenuation every 4 minutes, and so putting the network in a failure condition for 1 minute. After that, the WSS is reconfigured so that the network starts working properly again. 
+More precisely, we used the WSS to randomly change the attenuation every minute in a range from 0 to 18dB. In the second half, we have the same behaviour with the addition of a 25dB attenuation every 4 minutes, and so putting the network in a failure condition for one minute. After that, the WSS is reconfigured so that the network starts working properly again. 
+
 
 The *Failure* field is used as an indicator that shows all the entries that are gathered while the input power of the *Ampli1* is too low due to the WSS configuation. 
