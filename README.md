@@ -29,8 +29,8 @@ For this reason, the csv has been structrured with the following fields:
   - *Infrastructure*, for the amplifiers.
   - *Devices*, for the SPO devices.
 - **ID**: which refers to the id used in the testbed picture:
-  - *SPO1*;
-  - *SPO2*;
+  - *SPO1/18/11* (the identifier of the optical port on the SPO, following the schema SPO_ID/Card_ID/Port_ID);
+  - *SPO2/18/11*;
   - *Ampli1*;
   - *Ampli2*;
   - *Ampli3*;
