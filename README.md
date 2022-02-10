@@ -1,6 +1,6 @@
 # Optical Failure Dataset
 
-The following dataset was created using the ARNO testbed within the InRete Lab at the TeCIP Institute, Scuola Superiore Sant'Anna.
+The following datasets were created using the ARNO testbed within the InRete Lab at the TeCIP Institute, Scuola Superiore Sant'Anna.
 Using the system presented in A. Sgambelluri et al., ["Reliable and scalable Kafka-based framework for optical network telemetry"](https://www.osapublishing.org/jocn/abstract.cfm?uri=jocn-13-10-E42), we continously collected metrics from the optical testbed in normal condition in which we emulated periodic failures.
 
 ## Testbed description 
@@ -12,8 +12,8 @@ Each amplifier has been configured in constant gain mode, that allows to enter e
 The reverse link, from *SPO2* to *SPO1* is in back-to-back configuration, presenting a 10dB attenuator.
 ![Testbed](testbed.jpg)
 
-## Dataset details
-The dataset is composed of more than 10.000 samples, which are gathered from both the SPO devices and the amplifiers, every 3,5 seconds.
+## Datasets details
+The two dataset are composed with samples that are gathered from both SPO's cards and amplifiers, every 3,5 seconds.
 
 For each SPO, the following metrics are retrieved:
 - Optical Signal to Noise Ratio (OSNR)
@@ -41,13 +41,31 @@ For this reason, the csv has been structrured with the following fields:
 - **OutputPower**: only for the amplifiers related entries.
 - **Failure**: field showing entries acquired while simulating the failure.
 
+In both datasets we used the WSS to provide changes to the attenuation every minute, and so emulating both normal and abnormal conditions in the network. 
+The *Failure* field is used as an indicator that shows all the entries that are gathered while the input power of the *Ampli1* is too low due to the WSS configuation. 
+
+
+### Hard Failure dataset
+
 This 10 hours dataset is divided in two halves:
 - 5 hours in normal network condition;
-- 5 hours with periodic failures.
+- 5 hours with periodic (hard) failures.
 
 The entry with timestamp *1624471835* delimits the two parts. 
 
 More precisely, we used the WSS to randomly change the attenuation every minute in a range from 0 to 18dB. In the second half, we have the same behaviour with the addition of a 25dB attenuation every 4 minutes, and so putting the network in a failure condition for one minute. After that, the WSS is reconfigured so that the network starts working properly again. 
 
+### Soft Failure dataset
 
-The *Failure* field is used as an indicator that shows all the entries that are gathered while the input power of the *Ampli1* is too low due to the WSS configuation. 
+This other dataset has been created over a 8 hours period:
+- 4 hours in normal network condition;
+- 4 hours with periodic (soft) failures.
+
+The entry with timestamp *1624471536* delimits the two parts. 
+
+In this case, we tried a different approach with respect to the previous dataset. Instead of applying random changes to the attanuation in a range, we followed a sinusoidal path: every minute the attuation increases or decreases by ~0.5dB, moving from a maximum input power of -19,2dB to a minimum of -21dB at the *Ampli1*.
+In the second half, we overlapped to this behaviour a 10dB attenuation every 4 minutes, which produces a soft failure event (the BER and the OSNR at the receiver are affected but the network is still working). After that, the WSS is reconfigured so that the network starts working properly again. 
+
+
+
+
