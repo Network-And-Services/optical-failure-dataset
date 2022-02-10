@@ -63,7 +63,7 @@ This other dataset has been created over a 8 hours period:
 
 The entry with timestamp *1624471536* delimits the two parts. 
 
-In this case, we tried a different approach with respect to the previous dataset. Instead of applying random changes to the attanuation in a range, we followed a sinusoidal path: every minute the attuation increases or decreases by ~0.5dB, moving from a maximum input power of -19,2dB to a minimum of -21dB at the *Ampli1*.
+In this case, we tried a different approach with respect to the previous dataset. Instead of applying random changes to the attanuation in a range, we followed a sinusoidal path: every minute the attuation increases or decreases by ~0.5dB, moving from a maximum input power of -19,2dB to a minimum of -21,1dB at the *Ampli1*.
 In the second half, we overlapped to this behaviour a 10dB attenuation every 4 minutes, which produces a soft failure event (the BER and the OSNR at the receiver are affected but the network is still working). After that, the WSS is reconfigured so that the network starts working properly again. 
 
 
