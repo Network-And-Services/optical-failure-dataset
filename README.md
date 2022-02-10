@@ -67,5 +67,9 @@ In this case, we tried a different approach with respect to the previous dataset
 In the second half, we overlapped to this behaviour a 10dB attenuation every 4 minutes, which produces a soft failure event (the BER and the OSNR at the receiver are affected but the network is still working). After that, the WSS is reconfigured so that the network starts working properly again. 
 
 
+## Publications
+Those datasets has been used to provide results for the following pubblications:
+- Hard Failure dataset:
+	- M. F. Silva, A. Pacini, A. Sgambelluri and L. Valcarenghi, "Learning Long-and Short-Term Temporal Patterns for ML-driven Fault Management in Optical Communication Networks," in IEEE Transactions on Network and Service Management, [doi: 10.1109/TNSM.2022.3146869](https://ieeexplore.ieee.org/abstract/document/9695983).
 
 
