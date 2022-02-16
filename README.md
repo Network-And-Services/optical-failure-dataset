@@ -49,7 +49,7 @@ The *Failure* field is used as an indicator that shows all the entries that are 
 
 This 10 hours dataset is divided in three parts:
 - 6 hours in normal network condition (real, no changes applied with the WSS);
-- 2 hours with variable attenutation in normal condition (emulated with WSS, starts at entry with timestamp *1623416399*);
+- 2 hours with variable attenutation in normal condition (emulated with WSS, starts at entry with timestamp *1623416338*);
 - 2 hours with periodic (hard) failures (with WSS, starts at *1623423687*).
 
 More precisely, in the second part we used the WSS to randomly change the attenuation every 10 seconds in a range from 0 to 18dB. In the third part, we have the same behaviour with the addition of a 25dB attenuation every 40 seconds, and so putting the network in a failure condition for 10 seconds. After that, the WSS is reconfigured so that the network starts working properly again. 
